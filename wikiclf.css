@@ -22,7 +22,12 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: .17em;
     border-bottom: 1px solid #AAA;
 }
-
+div#mw-panel h3 {
+    line-height: normal;
+}
+div#mw-panel div.portal h3#p-navigation-label {
+    display: none;
+}
 div#mw-head div.vectorMenu h3 {
     font-size: 1.3em;
 }
@@ -96,13 +101,18 @@ div#mw-panel div.portal h5 {
     padding-left: 0;
 }
 /** Layout Corrections **/
+div#ubc-banner, .full-width #ubc7-header {
+    position: relative;
+    zoom: 1;
+    top: 0;
+}
 div#content {
     min-height: 750px;
     overflow: hidden;
 }
 
 div#mw-head {
-    top: 178px;
+    top: 148px;
 }
 
 div#mw-panel {
@@ -147,6 +157,13 @@ div#content h2.mw-specialpagesgroup {
     height: 100%;
     list-style: none;
     margin: 0;
+}
+div#mw-panel {
+    padding-left: 0.8em;
+}
+div#mw-panel #p-navigation .body {
+    margin-left: 0.5em;
+    background: none!important;
 }
 
 #wiki-toolbar>ul .title {
@@ -247,6 +264,14 @@ div#content h2.mw-specialpagesgroup {
     margin-bottom: 0;
     padding-top: 0;
 }
+#ubc7-header.row-fluid, #ubc7-header [class*="span"] {
+    height: 95px;
+}
+#ubc-banner {
+        display: block;
+        clear: both;
+        position: relative;
+}
 /** Responsive **/
 @media screen and (max-width: 979px) {
     #left-navigation {
@@ -258,12 +283,18 @@ div#content h2.mw-specialpagesgroup {
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
     div#mw-head {
-        top: 148px;
+        top: 178px;
     }
 
     div#mw-panel {
         top: 330px;
     }
 }
+@media screen and (min-width: 1200px) {
+    #ubc7-header.row-fluid, #ubc7-header [class*="span"] {
+    height: 115px;
+    }
+}
+
