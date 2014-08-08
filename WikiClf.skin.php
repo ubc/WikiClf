@@ -35,7 +35,19 @@ class SkinWikiClf extends SkinVector {
 		$out->addInlineScript( '
 				$("#ubc-banner")
     			.insertBefore("#mw-page-base");
-		');
+
+				$("#p-personal")
+    			.insertBefore("#ubc-banner");
+
+				$("#footer-ubc")
+    			.insertAfter("#footer");
+
+    			$("#mw-panel")
+    			.insertAfter("#ubc-banner");
+
+    			$("#mw-head")
+    			.insertAfter("#mw-panel");    					
+    	');
 
 		$out->prependHTML('<!-- UBC Global Utility Menu -->
                 <div id="ubc-banner" class="full-width full-width-left">
@@ -95,7 +107,28 @@ class SkinWikiClf extends SkinVector {
                         </div>
                         </div>
             </div>
-        </div><!-- End of Full Width -->');	
+        </div><!-- End of Full Width -->');
+       $out->addHTML( '
+       	<div id="footer-ubc" class="full-width full-width-left">
+	       	<footer id="ubc7-footer" class="expand ubc7-minimal-footer" role="contentinfo">
+	            <div class="row-fluid expand" id="ubc7-global-footer">
+	                <div class="span5" id="ubc7-signature"><a href="http://www.ubc.ca/">The University of British Columbia</a></div>
+	                <div class="span7" id="ubc7-footer-menu">
+	                </div>
+	            </div>
+	            <div class="row-fluid expand" id="ubc7-minimal-footer">
+	                <div class="span12">
+	                    <ul>
+	                        <li><a href="//cdn.ubc.ca/clf/ref/emergency">Emergency Procedures</a> <span class="divider">|</span></li>
+	                        <li><a href="//cdn.ubc.ca/clf/ref/terms">Terms of Use</a> <span class="divider">|</span></li>
+	                        <li><a href="//cdn.ubc.ca/clf/ref/copyright">Copyright</a> <span class="divider">|</span></li>
+	                        <li><a href="//cdn.ubc.ca/clf/ref/accessibility">Accessibility</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </footer>
+        </div>
+        ' );	
 	}
 	/**
 	 * @param $out OutputPage object
