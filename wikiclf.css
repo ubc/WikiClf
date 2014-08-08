@@ -7,9 +7,42 @@ body, html {
     font-family: sans-serif;
     background: #f6f6f6;
 }
+input, button, select, textarea {
+    font-family: sans-serif;    
+}
+
 /** INPUTS **/
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     height: auto;
+}
+label {
+    display: inline-block;
+}
+input[type="submit"] {
+    background-color: #002145;
+    background-image: -ms-linear-gradient(top, #002145, #191938);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from( #002145),to( #191938));
+    background-image: -webkit-linear-gradient(top, #002145, #191938);
+    background-image: -o-linear-gradient(top, #002145, #191938);
+    background-image: linear-gradient(to bottom, #002145, #191938);
+    background-image: -moz-linear-gradient(top, #002145, #191938);
+    background-repeat: repeat-x;
+    border: 1px solid #191938;
+    border-color: rgba(25, 25, 56, 0.5);
+    border-color: #002145;
+    color: #FFF;
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#002145', endColorstr='#191938', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+    text-decoration: none;
+    text-shadow: none;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+    background-color: #2F5D7C;
+    border-color: #2F5D7C;
+    background-position: 0 -200px;
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: none;
 }
 /** Typography **/
 h1, h2, h3, h4, h5, h6 {
@@ -22,22 +55,20 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: .17em;
     border-bottom: 1px solid #AAA;
 }
-div#mw-panel h3 {
-    line-height: normal;
-}
-div#mw-panel div.portal h3#p-navigation-label {
-    display: none;
-}
-div#mw-head div.vectorMenu h3 {
-    font-size: 1.3em;
-}
 
-li {
-    line-height: 1.6em;
+h3, h4, h5, h6 {
+    border-bottom: none;
+    font-weight: bold;
 }
 
 a {
     text-decoration: none;
+    color: #0645AD;
+    background: none;
+}
+
+a:visited {
+    color: #0B0080;
 }
 
 a.new:visited, #p-personal a.new:visited, a.new:visited, #p-personal a.new:visited, a.new, #p-personal a.new, a:hover {
@@ -48,18 +79,38 @@ a:active {
     color: #faa700;
 }
 
+div#mw-panel div.portal h3 {
+    font-size: 0.75em;
+    line-height: normal;
+    color: #4D4D4D;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.25em 0 0.25em 0.25em;
+    cursor: default;
+    border: none;
+}
+
+div#mw-panel div.portal h3#p-navigation-label {
+    display: none;
+}
+
+div#mw-head div.vectorMenu h3 {
+    font-size: 1.3em;
+}
+
 #bodyContent {
     font-size: 1em;
 }
 
 #mw-content-text {
-    line-height: 1.6;
     font-size: .875em;
 }
 
 div#content p {
-    line-height: 1.6;
     margin: .5em 0;
+}
+li, #mw-content-text, div#content p {
+    line-height: 1.6;  
 }
 
 div#content h1, div#content h2, div#content #firstHeading {
@@ -106,9 +157,14 @@ div#ubc-banner, .full-width #ubc7-header {
     zoom: 1;
     top: 0;
 }
+#mw-page-base {
+    margin-right: -20px;
+    margin-left: -20px;
+}
 div#content {
     min-height: 750px;
     overflow: hidden;
+    margin-right: -20px;
 }
 
 div#mw-head {
@@ -134,6 +190,21 @@ div#content h2.mw-specialpagesgroup {
 #ubc7-header {
     border-bottom: 0;
 }
+div#mw-panel div.portal {
+    margin: 0 0.6em 0 0.7em;
+    padding: 0.25em 0;
+    direction: ltr;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAAAAAAphRnkAAAAJ0lEQVQIW7XFsQEAIAyAMPD/b7uLWz8wS5youFW1UREfiIpH1Q2VBz7fGPS1dOGeAAAAAElFTkSuQmCC);
+    background-image: url(http://localhost:8888/mediawiki-1.23.1/skins/vector/images/portal-break.png?2014-07-30T19:25:00Z) !ie;
+}
+div#mw-panel div.portal div.body, div#mw-panel div.portal#p-navigation {
+    background-image: none;
+}
+div#mw-panel #p-navigation div.body {
+    margin: 0 0 0 0.25em;
+}
 /** CLF Fixings **/
 #ubc7-header {
     width: auto;
@@ -143,89 +214,6 @@ div#content h2.mw-specialpagesgroup {
     background-color: #002145;
 }
 
-#wiki-toolbar {
-    width: auto;
-    display: block;
-    position: static;
-    font-size: 13px;
-    padding: 0 18px;
-}
-/** TOOLBAR NOT IN USE **/
-#wiki-toolbar>ul {
-    float: right;
-    padding-left: 0;
-    height: 100%;
-    list-style: none;
-    margin: 0;
-}
-div#mw-panel {
-    padding-left: 0.8em;
-}
-div#mw-panel #p-navigation .body {
-    margin-left: 0.5em;
-    background: none!important;
-}
-
-#wiki-toolbar>ul .title {
-    font-weight: bold;
-}
-
-#wiki-toolbar>ul>li {
-    line-height: 1.125em;
-    float: left;
-    margin-left: .75em;
-    margin-top: 1em;
-    white-space: nowrap;
-}
-
-#wiki-toolbar>ul>li a:hover {
-    color: #222;
-}
-
-#wiki-toolbar>ul>li a.new {
-    color: #a55858;
-}
-
-#wiki-toolbar #pt-login:not(:hover), #wiki-toolbar #pt-userpage:not(:hover), #wiki-toolbar #pt-anonuserpage:not(:hover) {
-    background-color: transparent;
-}
-
-#wiki-toolbar #pt-login, #wiki-toolbar #pt-userpage, #wiki-toolbar #pt-anonuserpage {
-    padding-left: 0!important;
-}
-
-#wiki-toolbar #pt-login, #wiki-toolbar #pt-userpage, #wiki-toolbar #pt-anonuserpage {
-    padding-left: 15px!important;
-}
-
-#wiki-toolbar #pt-visit .btn-group {
-    font-size: inherit;
-}
-
-#wiki-toolbar #pt-visit .btn-group.open>a, #wiki-toolbar #pt-visit:hover .btn-group>a {
-    background: #FFF;
-    color: #333;
-    text-shadow: none;
-    border-right-color: rgba(0, 0, 0, 0);
-    border-left-color: rgba(0, 0, 0, 0);
-}
-
-#wiki-toolbar #pt-visit .caret {
-    margin-top: 5px;
-    border-top-color: #CCC;
-}
-
-#wiki-toolbar #pt-visit:hover .caret {
-    border-top-color: #fafafa;
-}
-
-#wiki-toolbar #pt-visit .btn-group.open .caret, #wiki-toolbar #pt-visit:hover .caret {
-    border-top-color: #000;
-}
-
-#wiki-toolbar>ul>li:hover .dropdown-menu {
-    display: block;
-}
 /** MainPage Styles **/
 .page-Main_Page h1.firstHeading {
     display: none;
@@ -272,7 +260,23 @@ div#mw-panel #p-navigation .body {
         clear: both;
         position: relative;
 }
+/** Visual Editor Overides **/
+.toolbar .label {
+    background-color: transparent;
+}
+.wikiEditor-ui .wikiEditor-ui-text textarea{
+    color: #111;
+
+}
 /** Responsive **/
+@media screen and (min-width: 979px) {
+    div#content, #mw-page-base {
+        margin-right: 0;
+    }
+    #mw-page-base {
+        margin-left: 0;
+    }
+}
 @media screen and (max-width: 979px) {
     #left-navigation {
         margin-left: 11.22em;
@@ -298,3 +302,211 @@ div#mw-panel #p-navigation .body {
     }
 }
 
+/** TOOLBAR OVERIDES **/
+#p-personal {
+    position: relative;
+    display: block;
+    direction: ltr;
+    color: #CCC;
+    height: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 600px;
+    z-index: 99999;
+    background: #222
+}
+#p-personal ul {
+    float: left;
+    overflow: hidden;
+    text-align: right;
+    margin-left: 10px;
+    padding: 0;
+    height: 100%;
+}
+#p-personal ul li {
+    line-height: 2.7em;
+    display: block;
+    margin: 0;
+}
+#p-personal ul li a {
+    display: block;
+    padding: 0 10px 0 9px;
+    font-size: 13px;
+    height: 32px;
+}
+#p-personal ul li a:visited, #p-personal ul li a:link, #p-personal ul li a, #p-personal a.new {
+    color: #fff!important;
+}
+#p-personal ul li a:hover, #p-personal ul li.active a {
+    background-color: #333;
+    color: #2EA2CC!important;
+}
+#ubc-banner {
+    margin-top: 32px;
+}
+#pt-userpage, #pt-anonuserpage, #pt-login {
+    background-image: none;
+}
+#p-personal li a:before, #p-personal li a:after, .editButtons:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 5px;
+    color: #ccc;
+}
+li#pt-userpage a:before {
+    content: "\f007";
+}
+li#pt-mytalk a:before {
+    content: "\f075";
+}
+li#pt-preferences a:before {
+    content: "\f03a";
+}
+li#pt-watchlist a:before {
+    content: "\f005";
+}
+li#pt-mycontris a:before {
+    content: "\f0c6";
+}
+li#pt-logout a:after {
+    content: "\f08b";
+    margin-left: 5px;
+}
+.editButtons:before{
+     content: "\f0c7"; 
+     color: #222;
+    font-size: 1.7em;
+    vertical-align: middle; 
+}
+#ubc7-footer.expand {
+    padding-right: 15px;
+    padding-left: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div#mw-head {
+    top: 180px;
+}
+/** Responsive **/
+@media screen and (min-width: 1200px) {
+    div#mw-head {
+        top: 210px;
+    }
+
+    div#mw-panel {
+        top: 385px;
+    }
+}
+@media screen and (max-width: 979px) {
+    #ubc7-footer.expand {
+        padding-right: 20px;
+        padding-left: 20px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+@media screen and (max-width: 767px) {
+    html, body {
+        background-color: #fff;
+    }
+    div#mw-head, div#mw-panel, div#p-logo, #p-logo a {
+        position: relative;
+        top: 0;
+        display: block;
+        width: 100%;
+    }
+    div#mw-page-base {
+        background-image: none;
+        background-color: transparent;
+    }
+    div#p-logo {
+        margin: 0 auto;
+    }
+    div#content {
+        overflow: visible;
+        margin-left: -18px;
+        margin-right: -18px;
+        border-right-width: 1px
+    }
+    #p-search {
+        float: none;
+        display: block;
+        clear: both;
+        padding-top: 15px;
+    }
+    #simpleSearch input[type="search"] {
+        webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    #left-navigation {
+        margin-left: 0;
+    }
+    #right-navigation {
+        margin-top: 0;
+        clear: left;
+    }
+    .portal {
+        display: none;
+    }
+    .portal#p-navigation {
+        display: block;
+    }
+    div#mw-panel div.portal div.body ul li {
+        padding-top: 0.5em;
+        font-size: 1.2em;
+        text-align: center;
+        font-weight: 300;
+        border-bottom: 1px solid #A7D7F9;
+    }
+    div#mw-panel div.portal div.body ul li:last-child {
+        border: none;
+    }
+    div#mw-panel div.portal div.body ul li:hover {
+        background-color: #A7D7F9;
+    }
+    div#content  #firstHeading {
+        clear: both;
+        padding: 15px 0 0 0;
+        text-align: center;
+    }
+    div#footer {
+        margin-left: 0;
+    }
+    #p-personal ul li a {
+        position: absolute;
+        width: 25px;
+        font-size: 1.8em;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0;
+        color: #999;
+        position: relative;
+        margin-left: 1%;
+        padding: 0 5px 0 10px;
+        text-align: center;
+    }
+    li#pt-logout a:before {
+        content: "\f08b";
+
+    }
+    #p-personal ul li a:before {
+        position: relative;
+        text-indent: 0;
+        width: 25px;
+        speak: none;
+        text-align: center;
+        margin-right: 15px;
+
+
+
+    }
+}
