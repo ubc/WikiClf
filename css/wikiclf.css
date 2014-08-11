@@ -7,20 +7,24 @@ body, html {
     font-family: sans-serif;
     background: #f6f6f6;
 }
+
 input, button, select, textarea {
-    font-family: sans-serif;    
+    font-family: sans-serif;
 }
 
 /** INPUTS **/
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     height: auto;
 }
+
 textarea {
     width: 100%;
 }
+
 label {
     display: inline-block;
 }
+
 input[type="submit"] {
     background-color: #002145;
     background-image: -ms-linear-gradient(top, #002145, #191938);
@@ -39,6 +43,11 @@ input[type="submit"] {
     text-decoration: none;
     text-shadow: none;
 }
+
+input.bodySearchBtnGo {
+    margin-top: -10px;
+}
+
 input[type="submit"]:hover, input[type="submit"]:focus {
     background-color: #2F5D7C;
     border-color: #2F5D7C;
@@ -46,6 +55,35 @@ input[type="submit"]:hover, input[type="submit"]:focus {
     color: #FFF;
     text-decoration: none;
     text-shadow: none;
+}
+
+fieldset {
+    border: 1px solid #2F6FAB;
+    margin: 1em 0 1em 0;
+    padding: 0 1em 1em;
+    line-height: 1.5em;
+}
+
+legend {
+    padding: .5em;
+    font-size: 95%;
+    width: auto;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    line-height: 1.5em;
+}
+
+.wikiEditor-ui .wikiEditor-ui-text > textarea#wpTextbox1 {
+    padding: 10px;
+}
+
+div.vectorMenu:hover div.menu, div.vectorMenu.menuForceShow div.menu {
+    z-index: 1;
+}
+
+.vectorMenu .menu ul li > a:hover {
+    background: #F0F8FF;
 }
 /** Typography **/
 h1, h2, h3, h4, h5, h6 {
@@ -112,8 +150,9 @@ div#mw-head div.vectorMenu h3 {
 div#content p {
     margin: .5em 0;
 }
+
 li, #mw-content-text, div#content p {
-    line-height: 1.6;  
+    line-height: 1.6;
 }
 
 div#content h1, div#content h2, div#content #firstHeading {
@@ -160,14 +199,15 @@ div#ubc-banner, .full-width #ubc7-header {
     zoom: 1;
     top: 0;
 }
+
 #mw-page-base {
     margin-right: -20px;
     margin-left: -20px;
 }
+
 div#content {
     min-height: 750px;
     overflow: hidden;
-    margin-right: -20px;
 }
 
 div#mw-head {
@@ -189,6 +229,7 @@ div#content h2.mw-specialpagesgroup {
 #ubc7-header {
     border-bottom: 0;
 }
+
 div#mw-panel div.portal {
     margin: 0 0.6em 0 0.7em;
     padding: 0.25em 0;
@@ -198,20 +239,25 @@ div#mw-panel div.portal {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAAAAAAphRnkAAAAJ0lEQVQIW7XFsQEAIAyAMPD/b7uLWz8wS5youFW1UREfiIpH1Q2VBz7fGPS1dOGeAAAAAElFTkSuQmCC);
     background-image: url(http://localhost:8888/mediawiki-1.23.1/skins/vector/images/portal-break.png?2014-07-30T19:25:00Z) !ie;
 }
+
 div#mw-panel div.portal div.body, div#mw-panel div.portal#p-navigation {
     background-image: none;
 }
+
 div#mw-panel #p-navigation div.body {
     margin: 0 0 0 0.25em;
 }
+
 ul#pagehistory {
     margin-top: 15px;
     margin-bottom: 10px;
 }
+
 ul#pagehistory input[type="radio"] {
     margin-right: 5px;
     margin-left: 5px;
 }
+
 div#article_embed textarea {
     background-color: #fff;
 }
@@ -262,31 +308,42 @@ div#article_embed textarea {
     margin-bottom: 0;
     padding-top: 0;
 }
+
 #ubc7-header.row-fluid, #ubc7-header [class*="span"] {
     height: 95px;
 }
+
 #ubc-banner {
-        display: block;
-        clear: both;
-        position: relative;
+    display: block;
+    clear: both;
+    position: relative;
 }
 /** Visual Editor Overides **/
 .toolbar .label {
     background-color: transparent;
 }
-.wikiEditor-ui .wikiEditor-ui-text textarea{
-    color: #111;
 
+.wikiEditor-ui .wikiEditor-ui-text textarea {
+    color: #111;
 }
 /** Responsive **/
+
 @media screen and (min-width: 979px) {
     div#content, #mw-page-base {
         margin-right: 0;
     }
+
     #mw-page-base {
         margin-left: 0;
     }
 }
+
+@media screen and (max-width: 979px) {
+    div#content, #mw-page-base {
+        margin-right: -20px;
+    }
+}
+
 @media screen and (max-width: 979px) {
     #left-navigation {
         margin-left: 11.22em;
@@ -306,13 +363,13 @@ div#article_embed textarea {
         top: 330px;
     }
 }
+
 @media screen and (min-width: 1200px) {
     #ubc7-header.row-fluid, #ubc7-header [class*="span"] {
-    height: 115px;
+        height: 115px;
     }
 }
 
-/** TOOLBAR OVERIDES **/
 #p-personal {
     position: relative;
     display: block;
@@ -326,8 +383,9 @@ div#article_embed textarea {
     width: 100%;
     min-width: 300px;
     z-index: 99999;
-    background: #222
+    background: #222;
 }
+
 #p-personal ul {
     float: left;
     overflow: hidden;
@@ -336,30 +394,37 @@ div#article_embed textarea {
     padding: 0;
     height: 100%;
 }
+
 #p-personal ul li {
     line-height: 2.7em;
     display: block;
     margin: 0;
 }
+
 #p-personal ul li a {
     display: block;
     padding: 0 10px 0 9px;
     font-size: 13px;
     height: 32px;
 }
+
 #p-personal ul li a:visited, #p-personal ul li a:link, #p-personal ul li a, #p-personal a.new {
     color: #fff!important;
 }
+
 #p-personal ul li a:hover, #p-personal ul li.active a {
     background-color: #333;
     color: #2EA2CC!important;
 }
+
 #ubc-banner {
     margin-top: 32px;
 }
+
 #pt-userpage, #pt-anonuserpage, #pt-login {
     background-image: none;
 }
+
 #p-personal li a:before, #p-personal li a:after, .editButtons:before {
     font-family: FontAwesome;
     font-weight: normal;
@@ -369,37 +434,47 @@ div#article_embed textarea {
     margin-right: 5px;
     color: #ccc;
 }
+
 li#pt-userpage a:before {
     content: "\f007";
 }
+
 li#pt-mytalk a:before {
     content: "\f075";
 }
+
 li#pt-preferences a:before {
     content: "\f03a";
 }
+
 li#pt-watchlist a:before {
     content: "\f005";
 }
+
 li#pt-mycontris a:before {
     content: "\f0c6";
 }
+
 li#pt-newmessages a:before {
-     content: "\f086";
+    content: "\f086";
 }
+
 li#pt-logout a:after {
     content: "\f08b";
     margin-left: 5px;
 }
+
 #p-personal ul li#pt-login a {
-    margin-top: 5px;    
+    margin-top: 5px;
 }
-.editButtons:before{
-     content: "\f0c7"; 
-     color: #222;
+
+.editButtons:before {
+    content: "\f0c7";
+    color: #222;
     font-size: 1.7em;
-    vertical-align: middle; 
+    vertical-align: middle;
 }
+
 #ubc7-footer.expand {
     padding-right: 15px;
     padding-left: 15px;
@@ -407,60 +482,111 @@ li#pt-logout a:after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 div#mw-head {
     top: 180px;
 }
 
 .clf-template {
     padding: 5px 20px 15px;
-    background: rgb(255,255,255); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(239,239,239,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+    background: rgb(255,255,255);
+ /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%);
+ /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(239,239,239,1)));
+ /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%);
+ /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%);
+ /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%);
+ /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%);
+ /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 );
+ /* IE6-9 */
     border-bottom: 2px solid #ccc;
-
 }
+
 .clf-template hr {
     height: auto;
     color: transparent;
-    background-color:  transparent;
+    background-color: transparent;
 }
+
 .clf-template ul {
     margin-bottom: 15px;
 }
+
 .clf-template ul li {
     font-size: 1.5em;
     list-style: none;
 }
+
 .clf-template ul li a {
     color: #333;
-
 }
+
 .clf-template ul li a:hover {
     color: #002145;
     text-decoration: underline;
 }
+
 div#content .clf-template h2 {
     margin-bottom: 1em;
     font-size: 3em;
     border: none;
 }
+
 div#content .clf-template h2 small {
     font-size: 20px;
     display: block;
     color: #333;
-    line-height: 1.2
+    line-height: 1.2;
 }
+
 .sandbox h2 {
     color: #8c6e28;
 }
+
 .sandbox hr {
     border-top: 1px solid #8c6e28;
     border-bottom-color: transparent;
+}
+
+#ubcclf-search {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+}
+
+input#bodySearchInput {
+    width: 300px;
+    height: 32px;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.4);
+    border: #fff;
+    border-color: rgba(255,255,255,0.4);
+}
+
+input#bodySearchInput:hover, #bodySearchInput:focus {
+    background-color: rgba(255,255,255,1);
+    border: 1px rgba(255,255,255,1);
+}
+
+input[type="submit"].bodySearchBtnGo {
+    background-color: #2F5D7C;
+    background-image: linear-gradient(to bottom, #2F5D7C, #2F5D7C);
+    border-color: #2F5D7C;
+    width: 100px;
+    height: 40px;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+input[type="submit"].bodySearchBtnGo:hover, input[type="submit"].bodySearchBtnGo:focus {
+    background-color: #002145;
+    border-color: #002145;
 }
 
 /** Responsive **/
@@ -473,6 +599,7 @@ div#content .clf-template h2 small {
         top: 385px;
     }
 }
+
 @media screen and (max-width: 979px) {
     #ubc7-footer.expand {
         padding-right: 20px;
@@ -481,54 +608,80 @@ div#content .clf-template h2 small {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
+
+    #ubcclf-intro {
+        margin: 0 auto;
+    }
+
+    #ubcclf-search {
+        position: relative;
+        display: block;
+        top: auto;
+        right: auto;
+        margin: 15px auto;
+        width: 100%;
+        text-align: center;
+    }
 }
+
 @media screen and (max-width: 767px) {
     html, body {
         background-color: #fff;
     }
+
     div#mw-head, div#mw-panel, div#p-logo, #p-logo a {
         position: relative;
         top: 0;
         display: block;
         width: 100%;
     }
+
     div#mw-page-base {
         background-image: none;
         background-color: transparent;
     }
+
     div#p-logo {
         margin: 0 auto;
     }
+
     div#content {
         overflow: visible;
         margin-left: -18px;
         margin-right: -18px;
-        border-right-width: 1px
+        border-right-width: 1px;
     }
+
     #p-search {
         float: none;
         display: block;
         clear: both;
         padding-top: 15px;
     }
+
     #simpleSearch input[type="search"] {
         webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
     }
+
     #left-navigation {
         margin-left: 0;
     }
+
     #right-navigation {
         margin-top: 0;
         clear: left;
     }
+
     .portal {
         display: none;
     }
+
     .portal#p-navigation {
         display: block;
     }
+
     div#mw-panel div.portal div.body ul li {
         padding-top: 0.5em;
         font-size: 1.2em;
@@ -536,20 +689,25 @@ div#content .clf-template h2 small {
         font-weight: 300;
         border-bottom: 1px solid #A7D7F9;
     }
+
     div#mw-panel div.portal div.body ul li:last-child {
         border: none;
     }
+
     div#mw-panel div.portal div.body ul li:hover, div#mw-panel div.portal div.body ul li:focus {
         background-color: #A7D7F9;
     }
+
     div#content  #firstHeading {
         clear: both;
         padding: 15px 0 0 0;
         text-align: center;
     }
+
     div#footer {
         margin-left: 0;
     }
+
     #p-personal ul li a {
         position: absolute;
         width: 25px;
@@ -563,14 +721,16 @@ div#content .clf-template h2 small {
         padding: 0 5px 0 10px;
         text-align: center;
     }
+
     li#pt-logout a:before {
         content: "\f08b";
-
     }
+
     #p-personal ul li#pt-login a {
         width: 76px;
-        margin-top: 5px;    
+        margin-top: 5px;
     }
+
     #p-personal ul li a:before {
         position: relative;
         text-indent: 0;
@@ -579,18 +739,53 @@ div#content .clf-template h2 small {
         text-align: center;
         margin-right: 15px;
     }
-}
-@media print {
-    div#p-personal, div#ubc-banner, div#mw-panel {
-      display: none;
+
+    #ubcclf-banner {
+        height: auto;
+        background-color: #002145;
+    }
+
+    #ubcclf-banner img {
+        display: none;
+    }
+
+    #ubcclf-intro {
+        width: auto;
+        height: 100%;
+        margin: 10px auto;
+        background-color: transparent;
+        color: #fff;
+        opacity: 1;
+    }
+
+    #ubcclf-intro h1 {
+        color: #fff;
+        text-align: center;
+    }
+
+    #ubcclf-intro h1 a {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    #bodySearchInput, input.bodySearchBtnGo {
+        margin: 10px auto;
+        display: block;
     }
 }
+
+@media print {
+    div#p-personal, div#ubc-banner, div#mw-panel {
+        display: none;
+    }
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
-        div#p-logo a {
-            background-image: url(../ubcwiki_logo_2x.png) !important;
-            background-size: 115px 128px;
-        }
+    div#p-logo a {
+        background-image: url(../ubcwiki_logo_2x.png) !important;
+        background-size: 115px 128px;
+    }
 }
