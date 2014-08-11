@@ -46,11 +46,13 @@ class SkinWikiClf extends SkinVector {
     			.insertAfter("#ubc-banner");
 
     			$("#mw-head")
-    			.insertAfter("#mw-panel");    					
+    			.insertAfter("#mw-panel");
+                $( "#p-personal, #ubc-banner, #mw-panel, #mw-head, #toc" ).addClass( "noprint" );    					
     	');
 
 		$out->prependHTML('<!-- UBC Global Utility Menu -->
-                <div id="ubc-banner" class="full-width full-width-left">
+			<noscript><div class="alert"><i class="icon-warning-sign icon-2x"></i> Your browser does not support JavaScript or is for some reason turned off! Please note that this website will not display correctly.</div><style>div#mw-head {top: 0;}div#mw-panel {top: 185px;}</style></noscript>
+                <div id="ubc-banner" class="full-width full-width-left noprint" role="banner">
                 <div class="collapse expand" id="ubc7-global-menu">
                         <div id="ubc7-search" class="expand">
                                 <div class="container" style="border-left: 1px solid #d7e0e7; border-right: 1px solid #d7e0e7; padding-left: 14px;padding-right: 14px;">
@@ -109,7 +111,7 @@ class SkinWikiClf extends SkinVector {
             </div>
         </div><!-- End of Full Width -->');
        $out->addHTML( '
-       	<div id="footer-ubc" class="full-width full-width-left">
+       	<div id="footer-ubc" class="full-width full-width-left noprint" role="footer">
 	       	<footer id="ubc7-footer" class="expand ubc7-minimal-footer" role="contentinfo">
 	            <div class="row-fluid expand" id="ubc7-global-footer">
 	                <div class="span5" id="ubc7-signature"><a href="http://www.ubc.ca/">The University of British Columbia</a></div>
@@ -137,7 +139,6 @@ class SkinWikiClf extends SkinVector {
 		parent::setupSkinUserCss( $out );
 		$out->addModuleStyles( "skins.WikiClf" );
 		$out->addStyle( '//cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css', 'screen' );
-		$out->addStyle( 'WikiClf/wikiclf.css', 'screen' );
-		$out->addStyle( 'WikiClf/wikiclf.css', 'screen' );
+		$out->addStyle( 'WikiClf/css/wikiclf.css', 'screen' );
 	}
 } 
