@@ -31,7 +31,9 @@ class SkinWikiClf extends SkinVector {
 		$out->addHeadItem( 'favicon-touch-114', '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://cdn.ubc.ca/clf/7.0.3/img/apple-touch-icon-114-precomposed.png">') ;
 		$out->addHeadItem( 'favicon-touch-72', '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://cdn.ubc.ca/clf/7.0.3/img/apple-touch-icon-72-precomposed.png">') ;
 		$out->addHeadItem( 'favicon-touch-57', '<link rel="apple-touch-icon-precomposed" href="http://cdn.ubc.ca/clf/7.0.3/img/apple-touch-icon-57-precomposed.png">') ;
-		//$out->addScript('<script type="text/javascript" src="//cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js?ver=1"></script>');
+        /**
+         * Rearrange Order of html
+         */
 		$out->addInlineScript( '
 				$("#ubc-banner")
     			.insertBefore("#mw-page-base");
@@ -47,11 +49,35 @@ class SkinWikiClf extends SkinVector {
 
     			$("#mw-head")
     			.insertAfter("#mw-panel");
+
+                $("#ctlt-sites")
+                .insertAfter("#p-personal ul");
+
                 $( "#p-personal, #ubc-banner, #mw-panel, #mw-head, #toc" ).addClass( "noprint" );    					
     	');
-
+        /**
+         * Output noscript comment and inline css for users without JS
+         */
 		$out->prependHTML('<!-- UBC Global Utility Menu -->
-			<noscript><div class="alert"><i class="icon-warning-sign icon-2x"></i> Your browser does not support JavaScript or is for some reason turned off! Please note that this website will not display correctly.</div><style>div#mw-head {top: 0;}div#mw-panel {top: 185px;}</style></noscript>
+            <noscript><div class="alert"><i class="icon-warning-sign icon-2x"></i> Your browser does not support JavaScript or is for some reason turned off! Please note that this website will not display correctly.</div><style>div#mw-head {top: 0;}div#mw-panel {top: 185px;} .wiki-clf-home .collapse { position: relative; height: auto; }</style></noscript>
+            <div id="ctlt-sites" class="btn-group" role="complementary">
+              <a class="btn btn-primary dropright dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="icon-globe"></i> Visit
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="http://blogs.ubc.ca/">Blogs</a></li>
+                <li><a href="http://wiki.ubc.ca/">Wiki</a></li>
+                <li><a href="http://sites.olt.ubc.ca/">Sites</a></li>
+                <li style="margin-top:1px; border-top: 1px solid #666;"><a href="http://blogs.ubc.ca/groups/">Groups</a></li>
+                <li><a href="http://blogs.ubc.ca/forums/">Forums</a></li>
+                <li><a href="http://blogs.ubc.ca/members/">People</a></li>
+                <li><a href="http://elearning.ubc.ca/">eLearning</a></li>
+                <li><a href="http://ipeer.apsc.ubc.ca/">iPeer</a></li>                  
+                <li><a href="https://webwork.elearning.ubc.ca/webwork2/">WebWorks</a></li>
+              </ul>
+            </div>
+			
                 <div id="ubc-banner" class="full-width full-width-left noprint" role="banner">
                 <div class="collapse expand" id="ubc7-global-menu">
                         <div id="ubc7-search" class="expand">
@@ -110,6 +136,9 @@ class SkinWikiClf extends SkinVector {
                         </div>
             </div>
         </div><!-- End of Full Width -->');
+        /**
+         * Output CLF footer
+         */
        $out->addHTML( '
        	<div id="footer-ubc" class="full-width full-width-left noprint" role="footer">
 	       	<footer id="ubc7-footer" class="expand ubc7-minimal-footer" role="contentinfo">
@@ -130,6 +159,7 @@ class SkinWikiClf extends SkinVector {
 	            </div>
 	        </footer>
         </div>
+        <script type="text/javascript" src="//cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js?ver=1"></script>
         ' );	
 	}
 	/**
