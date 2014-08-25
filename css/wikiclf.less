@@ -139,7 +139,7 @@ div#mw-panel div.portal h3 {
     margin: 0;
     padding: 0.25em 0 0.25em 0.25em;
     cursor: default;
-    border: none;
+    border-top: 1px solid #ccc;
 }
 
 div#mw-panel div.portal h3#p-navigation-label {
@@ -398,7 +398,21 @@ Tool Bar *****************************
 #pt-userpage, #pt-anonuserpage, #pt-login {
     background-image: none;
 }
-
+li#pt-login a, li#n-login a{
+    background: rgba(0, 0, 0, 0) url(../CWL_login_button.png) no-repeat scroll left top !important;
+    width: 72px;
+    height: 32px;
+    text-indent: 100%;
+    display: block;
+}
+li#n-login a {
+    background: rgba(0, 0, 0, 0) url(../CWL_login_sidebar.png) no-repeat scroll left top !important;
+    width: 76px;
+    text-indent: -100%;
+}
+#p-personal ul li#pt-login a:hover {
+    background-color: transparent;
+}
 #p-personal li a:before, #p-personal li a:after, .editButtons:before {
     font-family: FontAwesome;
     font-weight: normal;
@@ -439,7 +453,7 @@ li#pt-logout a:after {
 }
 
 #p-personal ul li#pt-login a {
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .editButtons:before {
@@ -772,8 +786,8 @@ div#content {
 .wiki-action a.new {
     color: #000;
 }
-.wiki-action a.new:hover, .wiki-action:hover a.new {
-    color: #FFF;
+.wiki-action a.new:hover, .wiki-action:focus a.new, .wiki-action:hover a, .wiki-action:focus a {
+    color: #FFF!important;
 }
 .wiki-index .one {
     border-color: #27ae60;
@@ -862,7 +876,7 @@ input[type="submit"].bodySearchBtnGo {
 }
 .bodySearchWrap {
     display: block!important;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     clear: both;
     width: 50%;
 }
@@ -890,6 +904,7 @@ input[type="submit"].bodySearchBtnGo {
     }
     table.wikitable {
         font-family: "Linux Libertine", Georgia, Times, serif;
+        background-color: #fff;
     }
     table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
         border: none;
